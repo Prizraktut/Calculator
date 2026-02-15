@@ -25,7 +25,16 @@
                 <input name="num2" type="number" step="0.01" id = "num2" placeholder="num2">
                 <button type="submit">Calculate</button>
             </FORM>
-            <span>${result}</span>
+
+           <c:if test="${result != null}">
+               <span> Result = ${result}</span>
+           </c:if>
+
+            <c:if test="${result = null}">
+                <span>ERROR</span>
+            </c:if>
+
+
         </div>
         <div class="col-2">
 

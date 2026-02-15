@@ -18,9 +18,7 @@ public class JDBCStorage {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
-
     public void updateName(Integer uniq, String name){
         Connection connection = Connections.getConnection();
         try {
@@ -33,7 +31,6 @@ public class JDBCStorage {
         }
 
     }
-
     public void deleteByUniq(Integer uniq){
         Connection connection = Connections.getConnection();
         try {

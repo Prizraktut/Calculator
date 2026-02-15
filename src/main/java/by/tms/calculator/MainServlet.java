@@ -28,10 +28,10 @@ public class MainServlet extends HttpServlet {
         double num1Double = Double.parseDouble(num1);
         double num2Double = Double.parseDouble(num2);
 
-        double result = num1Double + num2Double;
+        Calculate calculate = new Calculate(num1Double,num2Double,oper);
+        double result = calculate.calculate();
         req.setAttribute("result", result);
         getServletContext().getRequestDispatcher("/pages/calc.jsp").forward(req, resp);
-
     }
 
 }
