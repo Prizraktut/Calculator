@@ -45,5 +45,4 @@ public class MainServlet extends HttpServlet {
         jdbcStorage.saveHistory(history);
 
     }
-
 }
