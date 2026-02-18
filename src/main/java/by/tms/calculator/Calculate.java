@@ -13,7 +13,6 @@ public class Calculate {
         this.num1 = num1;
         this.num2 = num2;
         this.operator = operator;
-
     }
 
     public History processing(){

@@ -39,7 +39,7 @@
             <p style="text-align: center">Last history</p>
             <ul>
             <c:forEach items="${histories}" var="history">
-                <li> num1:${history.num1} num2:${history.num2} operation${history.operation} result: ${history.result}</li>
+                <li> num1: ${history.num1} num2: ${history.num2} operation: ${history.operation} result: ${history.result}</li>
             </c:forEach>
             </ul>
         </div>
