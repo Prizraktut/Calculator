@@ -5,12 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Connections {
-
-    public static Connection getConnection()  {
+public static Connection instance;
+    public static Connection getConnection() {
         try {
-            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","admin");
+            if (instance == null) {
+                return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "admin");
+            }
+            return instance;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
 }

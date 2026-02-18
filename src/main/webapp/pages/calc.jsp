@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-2">
         </div>
-        <div class="col-6">
+        <div class="col-10">
             <p style="text-align: center">CALCULATOR</p>
             <FORM ACTION="/calc" method="post">
                 <input name="num1" type="number" step="0.01" id = "num1" placeholder="num1" >
@@ -33,8 +33,15 @@
             <c:if test="${result = null}">
                 <span>ERROR</span>
             </c:if>
-
-
+            <br>
+            <br>
+            <br>
+            <p style="text-align: center">Last history</p>
+            <ul>
+            <c:forEach items="${histories}" var="history">
+                <li> num1:${history.num1} num2:${history.num2} operation${history.operation} result: ${history.result}</li>
+            </c:forEach>
+            </ul>
         </div>
         <div class="col-2">
 
