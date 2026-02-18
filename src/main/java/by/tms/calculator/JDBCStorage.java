@@ -8,12 +8,12 @@ public class JDBCStorage {
     public void saveHistory(History history) {
         Connection connection = Connections.getConnection();
         try {
-            PreparedStatement preparedStatement  = connection.prepareStatement("insert into history( num1, num2,rez,date,operation) values (?, ?, ?, ?, ?)");
+            PreparedStatement preparedStatement  = connection.prepareStatement("insert into history(num1, num2, rez, date, operation) values (?, ?, ?, ?, ?)");
         preparedStatement.setDouble(1, history.getNum1());
         preparedStatement.setDouble(2, history.getNum2());
         preparedStatement.setDouble(3,history.getResult());
-        preparedStatement.setString(5,  history.getDate());
-        preparedStatement.setString(4,history.getOperation());
+        preparedStatement.setString(4, history.getDate());
+        preparedStatement.setString(5, history.getOperation());
         preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -30,7 +30,6 @@ public class JDBCStorage {
                 double num2 = resultSet.getDouble("num2");
                 double result = resultSet.getDouble("rez");
                 String date = resultSet.getString("date");
-
                 String operation = resultSet.getString("operation");
                 History history = new History();
                 history.setNum1(num1);

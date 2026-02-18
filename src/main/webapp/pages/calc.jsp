@@ -12,9 +12,9 @@
     <div class="row">
         <div class="col-2">
         </div>
-        <div class="col-10">
+        <div class="col-10" style="text-align: center">
             <p style="text-align: center">CALCULATOR</p>
-            <FORM ACTION="/calc" method="post">
+            <FORM ACTION="/calc" method="post" style="text-align: center">
                 <input name="num1" type="number" step="0.01" id = "num1" placeholder="num1" >
                 <select name="operations">
                     <option selected value="plus">+</option>
@@ -37,11 +37,14 @@
             <br>
             <br>
             <p style="text-align: center">Last history</p>
-            <ul>
+            <form style="text-align: center">
+            <ul style="display: inline-block; text-align: center" >
             <c:forEach items="${histories}" var="history">
-                <li> num1: ${history.num1} num2: ${history.num2} operation: ${history.operation} result: ${history.result}</li>
+                <li > num1: ${history.num1} num2: ${history.num2} operation: ${history.operation} result: ${history.result}
+                date: ${history.date}</li>
             </c:forEach>
             </ul>
+            </form>
         </div>
         <div class="col-2">
 
